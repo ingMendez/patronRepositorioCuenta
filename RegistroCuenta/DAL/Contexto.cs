@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
-using System.Text;
 
 namespace RegistroCuenta.DAL
 {
    public  class Contexto: DbContext
     {
         public DbSet<Cuentas> Cuentas { get; set; }
-        
+
+        public DbSet<Presupuesto> Presupuestos { get; set; }
+
+        public DbSet<TiposCuentas> TiposCuentas { get; set; }
+
         public Contexto(): base("ConStr")
         {
 

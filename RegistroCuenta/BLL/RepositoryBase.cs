@@ -8,46 +8,47 @@
 
     namespace RegistroCuenta.BLL
     {
-      
 
-            public class RepositorioBase<T> : IDisposable, IRepository<T> where T : class
+
+        public class RepositorioBase<T> : IDisposable, IRepository<T> where T : class
+        {
+            internal Contexto _contexto;
+
+            public RepositorioBase()
             {
-                internal Contexto _contexto;
-                public RepositorioBase()
+                _contexto = new Contexto();
+            }
+
+            public virtual T Buscar(int id)
+            {
+                T entity;
+
+                try
                 {
-                    _contexto = new Contexto();
+                    entity = _contexto.Set<T>().Find(id);
+
+
                 }
-
-                public virtual T Buscar(int id)
+                catch (Exception)
                 {
-                     T entity;
-
-                    try
-                    {
-                         entity = _contexto.Set<T>().Find(id);
-                       
-
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                    return entity;
-                 }
-
-                public void Dispose()
-                {
-                    throw new NotImplementedException();
+                    throw;
                 }
+                return entity;
+            }
 
-                public bool Eliminar(int id)
-                {
+            public void Dispose()
+            {
+                throw new NotImplementedException();
+            }
+
+            public bool Eliminar(int id)
+            {
                 bool paso = false;
 
                 try
                 {
                     T Entity = _contexto.Set<T>().Find(id);
-                         paso = _contexto.SaveChanges() > 0;
+                    paso = _contexto.SaveChanges() > 0;
 
                 }
                 catch (Exception)
@@ -55,11 +56,11 @@
                     throw;
                 }
                 return paso;
-                 }
+            }
 
-                public List<T> GetList(Expression<Func<T, bool>> expression)
-                {
-                  List<T> Lista = new List<T>();
+            public List<T> GetList(Expression<Func<T, bool>> expression)
+            {
+                List<T> Lista = new List<T>();
                 try
                 {
                     Lista = _contexto.Set<T>().Where(expression).ToList();
@@ -70,55 +71,46 @@
                 }
                 return Lista;
 
-                 }
+            }
 
-                public  virtual bool Guardar(T entity)
-                {
-                        bool paso = false;
-
-                        try
-                        {
-                            if (_contexto.Set<T>().Add(entity) != null)
-                                paso = _contexto.SaveChanges() > 0;
-
-                        }
-                        catch (Exception)
-                        {
-                            throw;
-                        }
-                        return paso;
-                    }
-
-                public virtual bool Modificar(T entity)
-                     {
-                    bool paso = false;
-                    try
-                    {
-                        _contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-                        paso = _contexto.SaveChanges() > 0;
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                    return paso;
-                  }
-            public class PresupuesttoRepositorio : RepositorioBase<Presupuestos>
-        {
-            public override bool Guardar(Presupuestos presupuesto)
+            public virtual bool Guardar(T entity)
             {
-                foreach(var item in presupuesto.Detalle)
+                bool paso = false;
+
+                try
                 {
-                    this.Acumular(item.TipoEgresoId, item.Monto);
+                    if (_contexto.Set<T>().Add(entity) != null)
+                        paso = _contexto.SaveChanges() > 0;
+
                 }
-                bool paso = base.Guardar(presupuesto);
+                catch (Exception)
+                {
+                    throw;
+                }
                 return paso;
             }
-        }
-             }
-                
 
-       
+            public virtual bool Modificar(T entity)
+            {
+                bool paso = false;
+                try
+                {
+                    _contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    paso = _contexto.SaveChanges() > 0;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                return paso;
+            }
+            public void Dispos()
+            {
+                _contexto.Dispose();
+            }
+
+        }       
+    
     }
 
 
