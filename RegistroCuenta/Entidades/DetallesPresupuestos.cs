@@ -7,7 +7,7 @@ using System.Text;
 
 namespace RegistroCuenta.Entidades
 {
-    class DetallesPresupuestos
+   public  class DetallesPresupuestos
     {
         [Key]
         public int Id { get; set; }

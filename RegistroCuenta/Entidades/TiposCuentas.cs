@@ -9,6 +9,16 @@ namespace RegistroCuenta.Entidades
     {
        public int TipoCuentaId { get; set; }
         public string Descripcion { get; set; }
+
+        public TiposCuentas()
+        {
+
+        }
+        public TiposCuentas(int tipoCuenta,string descripcion)
+        {
+            TipoCuentaId = tipoCuenta;
+            Descripcion = descripcion;
+        }
     }
 
 }

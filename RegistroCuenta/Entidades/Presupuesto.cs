@@ -19,7 +19,7 @@ namespace RegistroCuenta.Entidades
 
         //public float Monto { get; set; }
 
-        public virtual List<DetallesPresupuestos> Detalle { get; set; }
+        public virtual List<DetallesPresupuestos> Detalle { get;set; }
 
         public Presupuesto()
         {
