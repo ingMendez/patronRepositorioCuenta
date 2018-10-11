@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\IRepository.cs" />
+    <Compile Include="BLL\PresupuestoBLL.cs" />
     <Compile Include="BLL\PresupuestoRepositorio.cs" />
     <Compile Include="BLL\RepositoryBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
@@ -69,6 +70,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

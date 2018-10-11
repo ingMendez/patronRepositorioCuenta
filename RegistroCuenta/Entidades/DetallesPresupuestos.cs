@@ -19,10 +19,10 @@ namespace RegistroCuenta.Entidades
         public float Valor { get; set; }
 
         [ForeignKey("CuentaId")]
-        public virtual Cuentas cuentas { get; set; }
+        public virtual Cuentas Cuentas { get; set; }
 
-       /* [ForeignKey("PresupuestoId")]
-        public virtual Presupuestos presupuesto { get; set; }*/
+       [ForeignKey("PresupuestoId")]
+        public virtual Presupuesto Presupuesto { get; set; }
 
         public DetallesPresupuestos()
         {
