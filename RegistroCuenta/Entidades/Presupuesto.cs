@@ -9,7 +9,6 @@ namespace RegistroCuenta.Entidades
    public class Presupuesto
     {
         [Key]
-
         public int PresupuestoId { get; set; }
 
         public DateTime Fecha { get; set; }

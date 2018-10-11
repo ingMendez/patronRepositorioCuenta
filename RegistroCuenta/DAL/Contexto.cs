@@ -19,5 +19,5 @@ namespace RegistroCuenta.DAL
         {
 
         }
-            }
+   }
 }

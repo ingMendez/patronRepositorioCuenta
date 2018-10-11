@@ -1,19 +1,17 @@
 ﻿using RegistroCuenta.DAL;
 using RegistroCuenta.Entidades;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace RegistroCuenta.BLL
 {
     public class PresupuestoRepositorio : RepositorioBase<Presupuesto>
     {
-        public PresupuestoRepositorio(Contexto contexto) : base(contexto)
+       /* public PresupuestoRepositorio(Contexto contexto) : base(contexto)
         {
 
-        }
-       /* public override bool Guardar(Presupuestos presupuesto)
+        }*/
+        public override bool Guardar(Presupuesto presupuesto)
         {
             foreach (var item in presupuesto.Detalle)
             {
@@ -21,21 +19,33 @@ namespace RegistroCuenta.BLL
             }
             bool paso = base.Guardar(presupuesto);
             return paso;
-        }*/
+        }
 
         public override Presupuesto Buscar(int id)
         {
             Presupuesto presupuesto = new Presupuesto();
             try
             {
-                presupuesto = _contexto.Presupuestos.Detalle.Find(id);
+                presupuesto = _contexto.Presupuestos.Find(id);
+                presupuesto.Detalle.Count();
+
+                foreach( var item in presupuesto.Detalle)
+                {
+                    int pre = item.Cuentas.CuentaId;
+                    string p = item.Presupuesto.Descripcion;
+                    
+              
+
+                }
+                _contexto.Dispose();
 
             }
             catch(Exception)
             {
                 throw;
             }
-            return base.Buscar(id);
+
+            return presupuesto;
         }
     }
 }
