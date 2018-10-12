@@ -7,19 +7,18 @@ namespace RegistroCuenta.BLL
 {
     public class PresupuestoRepositorio : RepositorioBase<Presupuesto>
     {
-       /* public PresupuestoRepositorio(Contexto contexto) : base(contexto)
-        {
+      
 
-        }*/
-        public override bool Guardar(Presupuesto presupuesto)
+       /* public override bool Guardar(Presupuesto presupuesto)
         {
             foreach (var item in presupuesto.Detalle)
             {
-                this.Acumular(item.TipoEgresoId, item.Monto);
+                this.Acumular(item.TipoId,item.Monto);
             }
             bool paso = base.Guardar(presupuesto);
+
             return paso;
-        }
+        }*/
 
         public override Presupuesto Buscar(int id)
         {

@@ -15,8 +15,8 @@ namespace RegistroCuenta.Entidades
 
         [StringLength(100)]
        public string Descripcion { get; set; }
-
-        //public float Monto { get; set; }
+      //  [foreign]
+        public float Monto { get; set; }
 
         public virtual List<DetallesPresupuestos> Detalle { get;set; }
 
@@ -29,5 +29,8 @@ namespace RegistroCuenta.Entidades
         {
             this.Detalle.Add(new DetallesPresupuestos(id, PresupuestoId, CuentaId, Valor));
         }
+
+        
+
     }
 }
