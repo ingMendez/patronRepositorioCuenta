@@ -14,11 +14,11 @@ namespace RegistroCuenta.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
-            Cuentas cuentas = new Cuentas();
-            cuentas.CuentaId = 1002;
-            cuentas.Descripcion = "William";
-            RepositorioBase<Cuentas> repositorio;
-            repositorio = new RepositorioBase<Cuentas>();
+            TiposCuentas cuentas = new TiposCuentas();
+            cuentas.TipoCuentaId = 1022;
+            cuentas.Descripcion = "alejandro";
+            RepositorioBase<TiposCuentas> repositorio;
+            repositorio = new RepositorioBase<TiposCuentas>();
             Assert.IsTrue(repositorio.Guardar(cuentas));
         }
 

@@ -9,7 +9,7 @@ namespace RegistroCuenta.DAL
 {
    public  class Contexto: DbContext
     {
-        public DbSet<Cuentas> Cuentas { get; set; }
+        public DbSet<Cuentas> Cuenta { get; set; }
 
         public DbSet<Presupuesto> Presupuestos { get; set; }
 
