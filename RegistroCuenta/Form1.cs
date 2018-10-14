@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using RegistroCuenta.UI;
 using System.Windows.Forms;
+using RegistroCuenta.Entidades;
 
 namespace RegistroCuenta
 {
@@ -19,10 +20,16 @@ namespace RegistroCuenta
 
         private void button2_Click(object sender, EventArgs e)
         {
-            RCuenta r = new RCuenta();
+            RPresupuesto r = new RPresupuesto();
             r.ShowDialog();
           
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RCuentas r = new RCuentas();
+            r.ShowDialog();
         }
     }
 }

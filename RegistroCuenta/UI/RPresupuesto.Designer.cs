@@ -1,6 +1,6 @@
 ﻿namespace RegistroCuenta.UI
 {
-    partial class RCuenta
+    partial class RPresupuesto
     {
         /// <summary>
         /// Required designer variable.

@@ -62,11 +62,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\RCuenta.cs">
+    <Compile Include="UI\RCuentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\RCuenta.Designer.cs">
-      <DependentUpon>RCuenta.cs</DependentUpon>
+    <Compile Include="UI\RCuentas.Designer.cs">
+      <DependentUpon>RCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RPresupuesto.Designer.cs">
+      <DependentUpon>RPresupuesto.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -80,8 +86,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\RCuenta.resx">
-      <DependentUpon>RCuenta.cs</DependentUpon>
+    <EmbeddedResource Include="UI\RCuentas.resx">
+      <DependentUpon>RCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RPresupuesto.resx">
+      <DependentUpon>RPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RegistroCuenta.UI
 {
-    public partial class RCuenta : Form
+    public partial class RPresupuesto : Form
     {
-        public RCuenta()
+        public RPresupuesto()
         {
             InitializeComponent();
         }
@@ -58,10 +58,10 @@ namespace RegistroCuenta.UI
 
             detalle.Add( new DetallesPresupuestos(
                 id: 0,
-                presupuestoid: (int)PresupuestoId_numericUpDown.Value,
-                tipoCuentas: (int)TipoCuentacomboBox.SelectedValue,
-                cuentaid:(int)CuentaidComboBox.SelectedValue,
-                valor: (float)Convert.ToSingle(Valor_numericUpDown.Value)
+                presupuestoid:(int)PresupuestoId_numericUpDown.Value,
+                tipoCuentas:(int)TipoCuentacomboBox.SelectedValue,
+                cuentaid:    10,//(int)CuentaidComboBox.SelectedValue,
+                valor:       10// (float)Convert.ToSingle(Valor_numericUpDown.Value)
                 ));
 
             DetallePresupuestodataGridView.DataSource = null;
