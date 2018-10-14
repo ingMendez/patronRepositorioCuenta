@@ -9,12 +9,13 @@ namespace RegistroCuenta.Entidades
     public class TiposCuentas
     {
         [Key]
-       public int TipoCuentaId { get; set; }
+        public int TipoCuentaId { get; set; }
         public string Descripcion { get; set; }
 
         public TiposCuentas()
         {
-
+            TipoCuentaId = 0;
+            Descripcion = string.Empty;
         }
         public TiposCuentas(int tipoCuenta,string descripcion)
         {

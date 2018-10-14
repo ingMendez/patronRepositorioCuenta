@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace RegistroCuenta.BLL
@@ -104,7 +105,7 @@ namespace RegistroCuenta.BLL
                 foreach(var item in presupuesto.Detalle)
                 {
                     var cuentas = contexto.Cuenta.Find(item.CuentaId);
-                    cuentas.MontoAnterior -= item.Valor;
+                    cuentas.Monto -= item.Valor;
 
                 }
 
@@ -147,7 +148,7 @@ namespace RegistroCuenta.BLL
                     {
                         //forzando la Descripcion y Nombres a cargarse
                         string s = item.Cuentas.Descripcion;
-                        //string ss = item.TiposCuentas.Descripcion;
+                        string ss = item.TiposCuentas.Descripcion;
                     }
                 }
                 contexto.Dispose();
@@ -159,20 +160,26 @@ namespace RegistroCuenta.BLL
             return presupuesto;
         }
 
-        public static List<Cuentas> GetList(Expression<Func<Cuentas, bool>> expression)
+        ///<summary>
+        ///Permite extraer una lista de cuenta de la Base de Datos.
+        ///</summary>
+        ///<param name="expression">Expresión Lambda conteniendo los filtros de búsqueda</param>
+        ///<returns>Retorna una lista de cuenta</returns>
+
+        public static List<Presupuesto> GetList(Expression<Func<Presupuesto, bool>> expression)
         {
-            List<Cuentas> cuenta = new List<Cuentas>();
+            List<Presupuesto> presupuestos = new List<Presupuesto>();
             Contexto contexto = new Contexto();
             try
             {
-                cuenta = contexto.Cuenta.Where(expression).ToList();
+                presupuestos = contexto.Presupuestos.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
-            return cuenta;
+            return presupuestos;
         }
 
 

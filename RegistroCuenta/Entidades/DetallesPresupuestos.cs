@@ -15,7 +15,8 @@ namespace RegistroCuenta.Entidades
         public int PresupuestoId { get; set; }
 
         public int CuentaId { get; set; }
-        public int TiposCuentas { get; set; }
+
+        public int TipoCuentaId { get; set; }
 
         public float Valor { get; set; }
 
@@ -24,13 +25,15 @@ namespace RegistroCuenta.Entidades
 
        [ForeignKey("PresupuestoId")]
         public virtual Presupuesto Presupuesto { get; set; }
+        [ForeignKey("TipoCuentaId")]
+        public virtual TiposCuentas TiposCuentas { get; set; }
 
         public DetallesPresupuestos()
         {
             this.Id = 0;
             this.PresupuestoId = 0;
             this.CuentaId = 0;
-            this.TiposCuentas = 0;
+            this.TipoCuentaId = 0;
             this.Valor = 0;
         }
         public DetallesPresupuestos(int id,int presupuestoid,int cuentaid,int tipoCuentas,float valor)
@@ -38,7 +41,7 @@ namespace RegistroCuenta.Entidades
             Id = id;
             PresupuestoId = presupuestoid;
             CuentaId = cuentaid;
-            TiposCuentas = tipoCuentas;
+            TipoCuentaId = tipoCuentas;
             Valor = valor;
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistroCuenta.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,29 @@ namespace RegistroCuenta.UI
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Add_button_Click(object sender, EventArgs e)
+        {
+            List<DetallesPresupuestos> detalle = new List<DetallesPresupuestos>();
+
+            if(DetallePresupuestodataGridView.DataSource != null)
+            {
+                detalle = (List < DetallesPresupuestos >) DetallePresupuestodataGridView.DataSource;
+            }
+
+            detalle.Add( new DetallesPresupuestos(
+                id: 0,
+                presupuestoid: (int)PresupuestoId_numericUpDown.Value,
+                tipoCuentas: (int)TipoCuentacomboBox.SelectedValue,
+                cuentaid:(int)CuentaidComboBox.SelectedValue,
+                valor: (float)Convert.ToSingle(Valor_numericUpDown.Value)
+                ));
+
+            DetallePresupuestodataGridView.DataSource = null;
+            DetallePresupuestodataGridView.DataSource = detalle;
+          //  LlenarTotal();
 
         }
     }

@@ -25,9 +25,9 @@ namespace RegistroCuenta.Entidades
             this.Detalle = new List<DetallesPresupuestos>();
         }
 
-        public void agregarDetalle(int id,int PresupuestoId,int CuentaId,float Valor)
+        public void agregarDetalle(int id,int PresupuestoId,int CuentaId,int TipoCuentaId,float Valor)
         {
-            this.Detalle.Add(new DetallesPresupuestos(id, PresupuestoId, CuentaId, Valor));
+            this.Detalle.Add(new DetallesPresupuestos(id, PresupuestoId, CuentaId, TipoCuentaId, Valor));
         }
 
         
