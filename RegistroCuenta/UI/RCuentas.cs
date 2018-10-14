@@ -24,7 +24,7 @@ namespace RegistroCuenta.UI
 
             cuenta.CuentaId = Convert.ToInt32(CuentaIdnumericUpDown.Value);
             cuenta.Descripcion = DescripciontextBox.Text;
-            cuenta.Monto = MontoNumericUpDown.Text.ToString;
+            cuenta.Monto.ToString(MontoNumericUpDown.Text); 
             return cuenta;
         }
 

@@ -1,4 +1,6 @@
-﻿using RegistroCuenta.Entidades;
+﻿using RegistroCuenta.BLL;
+using RegistroCuenta.DAL;
+using RegistroCuenta.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,12 @@ namespace RegistroCuenta.UI
         public RPresupuesto()
         {
             InitializeComponent();
+        }
+        private void LlenarComboBox()
+        {
+            RepositorioBase<Cuentas> CuentaRepositorio = new RepositorioBase<Cuentas>(new Contexto());
+            TipoCuentacomboBox.DataSource = CuentaRepositorio.GetList(c => true);
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -68,6 +76,11 @@ namespace RegistroCuenta.UI
             DetallePresupuestodataGridView.DataSource = detalle;
           //  LlenarTotal();
 
+        }
+
+        private void TipoCuentacomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LlenarComboBox();
         }
     }
 }

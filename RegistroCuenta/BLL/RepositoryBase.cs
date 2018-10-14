@@ -14,9 +14,9 @@
         {
             internal Contexto _contexto;
 
-            public RepositorioBase()
+            public RepositorioBase(Contexto contexto)
             {
-                _contexto = new Contexto();
+                _contexto =  contexto;
             }
 
             public virtual T Buscar(int id)

@@ -1,24 +1,28 @@
 ﻿using RegistroCuenta.DAL;
 using RegistroCuenta.Entidades;
 using System;
+using System.Data.Entity;
 using System.Linq;
 
 namespace RegistroCuenta.BLL
 {
     public class PresupuestoRepositorio : RepositorioBase<Presupuesto>
     {
-      
-
-       /* public override bool Guardar(Presupuesto presupuesto)
+        public PresupuestoRepositorio(Contexto contexto): base(contexto)
         {
-            foreach (var item in presupuesto.Detalle)
-            {
-                this.Acumular(item.TipoId,item.Monto);
-            }
-            bool paso = base.Guardar(presupuesto);
 
-            return paso;
-        }*/
+        }
+
+        /* public override bool Guardar(Presupuesto presupuesto)
+         {
+             foreach (var item in presupuesto.Detalle)
+             {
+                 this.Acumular(item.TipoId,item.Monto);
+             }
+             bool paso = base.Guardar(presupuesto);
+
+             return paso;
+         }*/
 
         public override Presupuesto Buscar(int id)
         {
@@ -45,6 +49,33 @@ namespace RegistroCuenta.BLL
             }
 
             return presupuesto;
+        }
+
+        public override bool Modificar(Presupuesto entity)
+        {
+            bool paso = false;
+
+            try
+            {
+                foreach(var item in entity.Detalle)
+                {
+                    var estado = item.Id > 0 ? EntityState.Modified;
+                    _contexto.Entry(item).State = estado;
+                }
+                ///indica que se ha medificado
+                _contexto.Entry(entity).State = EntityState.Modified;
+
+                if(_contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                _contexto.Dispose();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
         }
     }
 }

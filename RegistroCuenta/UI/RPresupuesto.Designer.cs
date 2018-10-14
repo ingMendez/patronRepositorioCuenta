@@ -236,6 +236,7 @@
             this.TipoCuentacomboBox.Name = "TipoCuentacomboBox";
             this.TipoCuentacomboBox.Size = new System.Drawing.Size(104, 21);
             this.TipoCuentacomboBox.TabIndex = 20;
+            this.TipoCuentacomboBox.SelectedIndexChanged += new System.EventHandler(this.TipoCuentacomboBox_SelectedIndexChanged);
             // 
             // CuentaidComboBox
             // 
@@ -245,7 +246,7 @@
             this.CuentaidComboBox.Size = new System.Drawing.Size(121, 21);
             this.CuentaidComboBox.TabIndex = 21;
             // 
-            // RCuenta
+            // RPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,7 +273,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "RCuenta";
+            this.Name = "RPresupuesto";
             this.Text = "RegistroCuenta";
             ((System.ComponentModel.ISupportInitialize)(this.PresupuestoId_numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
