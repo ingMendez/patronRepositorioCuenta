@@ -36,11 +36,6 @@
                 return entity;
             }
 
-            public void Dispose()
-            {
-                throw new NotImplementedException();
-            }
-
             public bool Eliminar(int id)
             {
                 bool paso = false;
@@ -104,7 +99,7 @@
                 }
                 return paso;
             }
-            public void Dispos()
+            public void Dispose()
             {
                 _contexto.Dispose();
             }

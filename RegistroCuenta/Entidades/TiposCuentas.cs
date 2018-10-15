@@ -17,11 +17,11 @@ namespace RegistroCuenta.Entidades
             TipoCuentaId = 0;
             Descripcion = string.Empty;
         }
-        public TiposCuentas(int tipoCuenta,string descripcion)
+      /**  public TiposCuentas(int tipoCuenta,string descripcion)
         {
             TipoCuentaId = tipoCuenta;
             Descripcion = descripcion;
-        }
+        }*/
     }
 
 }

@@ -8,6 +8,7 @@ using System.Text;
 using RegistroCuenta.UI;
 using System.Windows.Forms;
 using RegistroCuenta.Entidades;
+using RegistroCuenta.UI.Registro;
 
 namespace RegistroCuenta
 {

@@ -59,7 +59,7 @@ namespace RegistroCuenta.BLL
             {
                 foreach(var item in entity.Detalle)
                 {
-                    var estado = item.Id > 0 ? EntityState.Modified;
+                    var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
                     _contexto.Entry(item).State = estado;
                 }
                 ///indica que se ha medificado

@@ -10,7 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RegistroCuenta.UI
+
+namespace RegistroCuenta.UI.Registro
 {
     public partial class RPresupuesto : Form
     {
@@ -22,6 +23,7 @@ namespace RegistroCuenta.UI
         {
             RepositorioBase<Cuentas> CuentaRepositorio = new RepositorioBase<Cuentas>(new Contexto());
             TipoCuentacomboBox.DataSource = CuentaRepositorio.GetList(c => true);
+            TipoCuentacomboBox.ValueMember = "TiposcuentaId";
 
         }
 
@@ -59,22 +61,22 @@ namespace RegistroCuenta.UI
         {
             List<DetallesPresupuestos> detalle = new List<DetallesPresupuestos>();
 
-            if(DetallePresupuestodataGridView.DataSource != null)
+            if (DetallePresupuestodataGridView.DataSource != null)
             {
-                detalle = (List < DetallesPresupuestos >) DetallePresupuestodataGridView.DataSource;
+                detalle = (List<DetallesPresupuestos>)DetallePresupuestodataGridView.DataSource;
             }
 
-            detalle.Add( new DetallesPresupuestos(
+            detalle.Add(new DetallesPresupuestos(
                 id: 0,
-                presupuestoid:(int)PresupuestoId_numericUpDown.Value,
-                tipoCuentas:(int)TipoCuentacomboBox.SelectedValue,
-                cuentaid:    10,//(int)CuentaidComboBox.SelectedValue,
-                valor:       10// (float)Convert.ToSingle(Valor_numericUpDown.Value)
+                presupuestoid: (int)PresupuestoId_numericUpDown.Value,
+                tipoCuentas: 10,//(int)TipoCuentacomboBox.SelectedValue,
+                cuentaid: 10,//(int)CuentaidComboBox.SelectedValue,
+                valor: (float)Convert.ToSingle(Valor_numericUpDown.Value)
                 ));
 
             DetallePresupuestodataGridView.DataSource = null;
             DetallePresupuestodataGridView.DataSource = detalle;
-          //  LlenarTotal();
+            //  LlenarTotal();
 
         }
 

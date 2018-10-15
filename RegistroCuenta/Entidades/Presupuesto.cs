@@ -13,7 +13,7 @@ namespace RegistroCuenta.Entidades
 
         public DateTime Fecha { get; set; }
 
-        [StringLength(100)]
+      //  [StringLength(100)]
        public string Descripcion { get; set; }
       //  [foreign]
         public float Monto { get; set; }
@@ -22,13 +22,21 @@ namespace RegistroCuenta.Entidades
 
         public Presupuesto()
         {
-            this.Detalle = new List<DetallesPresupuestos>();
+            PresupuestoId = 0;
+            Fecha = DateTime.Now;
+            Descripcion = string.Empty;
+            Monto = 0;
         }
 
-        public void agregarDetalle(int id,int PresupuestoId,int CuentaId,int TipoCuentaId,float Valor)
+     /*   public Presupuesto()
+        {
+            this.Detalle = new List<DetallesPresupuestos>();
+        }*/
+
+       /* public void agregarDetalle(int id,int PresupuestoId,int CuentaId,int TipoCuentaId,float Valor)
         {
             this.Detalle.Add(new DetallesPresupuestos(id, PresupuestoId, CuentaId, TipoCuentaId, Valor));
-        }
+        }*/
 
         
 
