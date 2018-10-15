@@ -50,12 +50,14 @@
             // 
             // TipoCuentasButton
             // 
+            this.TipoCuentasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoCuentasButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.TipoCuentasButton.Location = new System.Drawing.Point(200, 93);
+            this.TipoCuentasButton.Location = new System.Drawing.Point(196, 96);
             this.TipoCuentasButton.Margin = new System.Windows.Forms.Padding(2);
             this.TipoCuentasButton.Name = "TipoCuentasButton";
-            this.TipoCuentasButton.Size = new System.Drawing.Size(22, 22);
+            this.TipoCuentasButton.Size = new System.Drawing.Size(43, 22);
             this.TipoCuentasButton.TabIndex = 59;
+            this.TipoCuentasButton.Text = "Tipo";
             this.TipoCuentasButton.UseVisualStyleBackColor = true;
             this.TipoCuentasButton.Click += new System.EventHandler(this.TipoCuentasButton_Click_1);
             // 
@@ -176,6 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(281, 230);
             this.Controls.Add(this.TipoCuentasButton);
             this.Controls.Add(this.TipoComboBox);

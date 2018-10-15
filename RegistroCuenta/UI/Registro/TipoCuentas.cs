@@ -40,7 +40,7 @@ namespace RegistroCuenta.UI.Registro
             TipoIDnumericUpDown.Value = tipoCuentas.TipoCuentaId;
             DescripciontextBox.Text = tipoCuentas.Descripcion;
         }
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private void NuevoButton_Click_1(object sender, EventArgs e)
         {
             Limpiar();
         }
@@ -61,7 +61,7 @@ namespace RegistroCuenta.UI.Registro
             }
             return paso;
         }
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void GuardarButton_Click_1(object sender, EventArgs e)
         {
             repositorio = new RepositorioBase<TiposCuentas>(new Contexto());
             TiposCuentas tipoCuentas;
@@ -90,7 +90,7 @@ namespace RegistroCuenta.UI.Registro
                 MessageBox.Show("No se Guardo el Tipo De Cuenta!!", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void BuscarButton_Click_1(object sender, EventArgs e)
         {
             int id;
             repositorio = new RepositorioBase<TiposCuentas>(new Contexto());
@@ -107,7 +107,7 @@ namespace RegistroCuenta.UI.Registro
                 MessageBox.Show("Tipo de Cuenta no Encontrada", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void EliminarButton_Click(object sender, EventArgs e)
+        private void EliminarButton_Click_1(object sender, EventArgs e)
         {
             int id;
             repositorio = new RepositorioBase<TiposCuentas>(new Contexto());
@@ -126,5 +126,7 @@ namespace RegistroCuenta.UI.Registro
             else
                 MessageBox.Show("No se pudo eliminar El Tipo De Cuenta!!", "Fallo!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+       
     }
 }

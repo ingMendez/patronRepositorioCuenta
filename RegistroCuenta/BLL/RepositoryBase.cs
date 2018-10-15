@@ -9,7 +9,6 @@
     namespace RegistroCuenta.BLL
     {
 
-
         public class RepositorioBase<T> : IDisposable, IRepository<T> where T : class
         {
             internal Contexto _contexto;

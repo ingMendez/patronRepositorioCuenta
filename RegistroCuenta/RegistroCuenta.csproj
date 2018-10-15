@@ -118,8 +118,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\scripts\Scripts.sql" />
+    <Folder Include="DAL\scripts\" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

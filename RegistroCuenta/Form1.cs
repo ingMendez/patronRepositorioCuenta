@@ -27,10 +27,6 @@ namespace RegistroCuenta
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RCuentas r = new RCuentas();
-            r.ShowDialog();
-        }
+       
     }
 }

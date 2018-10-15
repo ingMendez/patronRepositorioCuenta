@@ -59,5 +59,11 @@ namespace RegistroCuenta.UI.Registro
         {
 
         }
+
+        private void Ventana_button_Click(object sender, EventArgs e)
+        {
+            RCuentas rcuenta = new RCuentas();
+            rcuenta.ShowDialog();
+        }
     }
 }

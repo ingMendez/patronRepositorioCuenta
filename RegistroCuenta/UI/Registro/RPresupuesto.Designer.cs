@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CuentaidComboBox = new System.Windows.Forms.ComboBox();
             this.TipoCuentacomboBox = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -55,20 +54,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PresupuestoId_numericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // CuentaidComboBox
-            // 
-            this.CuentaidComboBox.FormattingEnabled = true;
-            this.CuentaidComboBox.Location = new System.Drawing.Point(231, 85);
-            this.CuentaidComboBox.Name = "CuentaidComboBox";
-            this.CuentaidComboBox.Size = new System.Drawing.Size(121, 21);
-            this.CuentaidComboBox.TabIndex = 63;
-            // 
             // TipoCuentacomboBox
             // 
             this.TipoCuentacomboBox.FormattingEnabled = true;
-            this.TipoCuentacomboBox.Location = new System.Drawing.Point(84, 129);
+            this.TipoCuentacomboBox.Location = new System.Drawing.Point(10, 157);
             this.TipoCuentacomboBox.Name = "TipoCuentacomboBox";
-            this.TipoCuentacomboBox.Size = new System.Drawing.Size(104, 21);
+            this.TipoCuentacomboBox.Size = new System.Drawing.Size(94, 21);
             this.TipoCuentacomboBox.TabIndex = 62;
             this.TipoCuentacomboBox.SelectedIndexChanged += new System.EventHandler(this.TipoCuentacomboBox_SelectedIndexChanged_1);
             // 
@@ -132,12 +123,13 @@
             // Ventana_button
             // 
             this.Ventana_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Ventana_button.Location = new System.Drawing.Point(117, 154);
+            this.Ventana_button.Location = new System.Drawing.Point(110, 156);
             this.Ventana_button.Name = "Ventana_button";
             this.Ventana_button.Size = new System.Drawing.Size(32, 26);
             this.Ventana_button.TabIndex = 55;
             this.Ventana_button.Text = "+";
             this.Ventana_button.UseVisualStyleBackColor = true;
+            this.Ventana_button.Click += new System.EventHandler(this.Ventana_button_Click);
             // 
             // TotalTextBox
             // 
@@ -149,7 +141,7 @@
             // 
             // Valor_numericUpDown
             // 
-            this.Valor_numericUpDown.Location = new System.Drawing.Point(159, 156);
+            this.Valor_numericUpDown.Location = new System.Drawing.Point(150, 160);
             this.Valor_numericUpDown.Name = "Valor_numericUpDown";
             this.Valor_numericUpDown.Size = new System.Drawing.Size(131, 20);
             this.Valor_numericUpDown.TabIndex = 53;
@@ -245,8 +237,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(367, 429);
-            this.Controls.Add(this.CuentaidComboBox);
             this.Controls.Add(this.TipoCuentacomboBox);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.Guardarbutton);
@@ -279,8 +271,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox CuentaidComboBox;
         private System.Windows.Forms.ComboBox TipoCuentacomboBox;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Guardarbutton;
