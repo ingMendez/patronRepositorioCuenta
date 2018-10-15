@@ -27,37 +27,7 @@ namespace RegistroCuenta.UI.Registro
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Ventana_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RemoverButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Add_button_Click(object sender, EventArgs e)
+        private void Add_button_Click_1(object sender, EventArgs e)
         {
             List<DetallesPresupuestos> detalle = new List<DetallesPresupuestos>();
 
@@ -80,9 +50,14 @@ namespace RegistroCuenta.UI.Registro
 
         }
 
-        private void TipoCuentacomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void TipoCuentacomboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             LlenarComboBox();
+        }
+
+        private void RemoverButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

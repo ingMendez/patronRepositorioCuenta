@@ -66,10 +66,11 @@
             // TipoCuentacomboBox
             // 
             this.TipoCuentacomboBox.FormattingEnabled = true;
-            this.TipoCuentacomboBox.Location = new System.Drawing.Point(11, 156);
+            this.TipoCuentacomboBox.Location = new System.Drawing.Point(84, 129);
             this.TipoCuentacomboBox.Name = "TipoCuentacomboBox";
             this.TipoCuentacomboBox.Size = new System.Drawing.Size(104, 21);
             this.TipoCuentacomboBox.TabIndex = 62;
+            this.TipoCuentacomboBox.SelectedIndexChanged += new System.EventHandler(this.TipoCuentacomboBox_SelectedIndexChanged_1);
             // 
             // button4
             // 
@@ -118,6 +119,7 @@
             this.RemoverButton.TabIndex = 57;
             this.RemoverButton.Text = "Remover";
             this.RemoverButton.UseVisualStyleBackColor = false;
+            this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
             // 
             // DetallePresupuestodataGridView
             // 
@@ -161,6 +163,7 @@
             this.Add_button.TabIndex = 52;
             this.Add_button.Text = "Add";
             this.Add_button.UseVisualStyleBackColor = true;
+            this.Add_button.Click += new System.EventHandler(this.Add_button_Click_1);
             // 
             // numericUpDown1
             // 
