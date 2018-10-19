@@ -23,7 +23,8 @@ namespace RegistroCuenta.UI.Registro
         {
             RepositorioBase<Cuentas> CuentaRepositorio = new RepositorioBase<Cuentas>(new Contexto());
             TipoCuentacomboBox.DataSource = CuentaRepositorio.GetList(c => true);
-            TipoCuentacomboBox.ValueMember = "TiposcuentaId";
+            TipoCuentacomboBox.ValueMember = "CuentaId";
+            TipoCuentacomboBox.DisplayMember = "Descripcion";
 
         }
 

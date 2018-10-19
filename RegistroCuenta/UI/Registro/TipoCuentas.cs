@@ -127,6 +127,9 @@ namespace RegistroCuenta.UI.Registro
                 MessageBox.Show("No se pudo eliminar El Tipo De Cuenta!!", "Fallo!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-       
+        private void DescripciontextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -120,6 +120,7 @@
             this.CuentaIdnumericUpDown.Name = "CuentaIdnumericUpDown";
             this.CuentaIdnumericUpDown.Size = new System.Drawing.Size(58, 20);
             this.CuentaIdnumericUpDown.TabIndex = 52;
+            this.CuentaIdnumericUpDown.ValueChanged += new System.EventHandler(this.CuentaIdnumericUpDown_ValueChanged);
             // 
             // label1
             // 

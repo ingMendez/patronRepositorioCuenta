@@ -9,6 +9,7 @@ using RegistroCuenta.UI;
 using System.Windows.Forms;
 using RegistroCuenta.Entidades;
 using RegistroCuenta.UI.Registro;
+using RegistroCuenta.UI.Consultas;
 
 namespace RegistroCuenta
 {
@@ -27,6 +28,10 @@ namespace RegistroCuenta
 
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PrConsultas con = new PrConsultas();
+            con.ShowDialog();
+        }
     }
 }

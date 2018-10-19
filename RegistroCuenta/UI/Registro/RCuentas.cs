@@ -29,8 +29,8 @@ namespace RegistroCuenta.UI.Registro
         {
             RepositorioBase<TiposCuentas> rTipoCuentas = new RepositorioBase<TiposCuentas>(new Contexto());
             TipoComboBox.DataSource = rTipoCuentas.GetList(x => true);
-            TipoComboBox.ValueMember = "TipoId";
-            TipoComboBox.DisplayMember = "Descripcion";
+            TipoComboBox.ValueMember = "TipoCuentaId";
+            TipoComboBox.DisplayMember ="Descripcion";
         }
         private void Limpiar()
         {
@@ -46,6 +46,7 @@ namespace RegistroCuenta.UI.Registro
 
             cuenta.CuentaId = Convert.ToInt32(CuentaIdnumericUpDown.Value);
             cuenta.Descripcion = DescripciontextBox.Text;
+            cuenta.TipoId = (int)TipoComboBox.SelectedValue;
             cuenta.Monto = Convert.ToDouble(MontoNumericUpDown.Value);
             return cuenta;
         }
@@ -93,8 +94,9 @@ namespace RegistroCuenta.UI.Registro
 
             if (!GuardarValidar())
             {
-                MessageBox.Show("Favor revisar todos los campos", "Validación",
-                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+               /* MessageBox.Show("Favor revisar todos los campos", "Validación",
+                 MessageBoxButtons.OK, MessageBoxIcon.Error);*/
             }
 
             // cuenta = LlenaClase();
@@ -189,6 +191,11 @@ namespace RegistroCuenta.UI.Registro
             {
                 MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void CuentaIdnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -23,9 +23,9 @@ namespace RegistroCuenta.Entidades
         public Cuentas()
         {
             CuentaId = 0;
-          //  TipoId = 0;
+            TipoId = 0;
             Descripcion = string.Empty;
-           // Monto = 0;
+            Monto = 0;
 
         }
 
